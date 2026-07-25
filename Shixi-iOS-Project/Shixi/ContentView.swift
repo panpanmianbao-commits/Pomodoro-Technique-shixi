@@ -20,7 +20,7 @@ struct ContentView: View {
                 vm.currentTheme.bgColor.ignoresSafeArea()
 
                 ScrollView {
-                    VStack(spacing: 16) {
+                    VStack(spacing: 12) {
                         headerView          // 顶部标题栏 + 用户菜单
                         modeSwitchView      // 普通计时 / 番茄钟模式切换
 
@@ -310,7 +310,7 @@ struct ContentView: View {
                         }
                     }
                 }
-                .frame(height: 140)   // 固定高度，避免内容高度变化引起上下跳动
+                .frame(height: 120)   // 固定高度，避免内容高度变化引起上下跳动
 
                 // 进度条（位置不再受动画区高度影响）
                 GeometryReader { geo in
@@ -332,9 +332,9 @@ struct ContentView: View {
                     .foregroundColor(Color(hex: "#bbbbbb"))
                     .frame(maxWidth: .infinity, alignment: .trailing)
             }
-            .padding(20)
+            .padding(16)
         }
-        .frame(minHeight: 180)
+        .frame(minHeight: 160)
         .scaleEffect(vm.isRunning ? 1.0 : 0.86)          // 空闲时更紧凑
         .animation(
             .spring(response: 0.45, dampingFraction: 0.65),
