@@ -8,9 +8,10 @@ import UserNotifications
 struct ShixiApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
-    var body: some Scene {
+var body: some Scene {
         WindowGroup {
-            ContentView()
+            // 使用标签页栏作为根视图
+            MainTabView()
                 .environmentObject(ShixiViewModel())  // 注入全局视图模型
         }
     }
